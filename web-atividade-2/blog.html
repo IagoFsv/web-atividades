@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .header {
+            background-color: #355868;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+        .aside section{
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        nav {
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            background: #ccc;
+            padding: 20px;
+        }
+
+        .nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        article {
+            -webkit-flex: 3;
+            -ms-flex: 3;
+            flex: 3;
+            background-color: #f1f1f1;
+            padding: 10px;
+        }
+        
+        .footer {
+            background-color:#31505e;
+            color: white;
+            text-align:center;
+            padding:10px;
+            margin-top:7px;
+            font-size:12px
+        }
+
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+    }
+    </style>
+
+</head>
+<body>
+
+    <div class="header">
+        <h1>Blog Novo</h1>
+    </div>
+
+    <div class="main">
+        <div class="aside">
+            <section>
+                <nav>
+                    <h3>Outros sites</h3>
+                  <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                  </ul>
+                </nav>
+                
+                <article>
+                  <h1>Redes Sociais</h1>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum rerum natus eaque laboriosam repudiandae dicta incidunt nulla iure dolor consequuntur consectetur, reprehenderit ipsam excepturi iste autem fugiat expedita ipsum cupiditate!</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam perspiciatis voluptatibus, magnam consectetur consequatur aliquid dolore veniam quam facilis aut, ullam minima vitae dolorem repudiandae sint esse mollitia. Magni, corrupti.</p>
+
+                  <img src="https://www.tracto.com.br/wp-content/uploads/2014/07/nuvem-de-redes-sociais-icone-para-calendario-320x320px.jpg" alt="imagem das redes sociais" style="width: 20%;">
+                  <p><time datetime="2025-04-30">30 de abril de 2025</time></p>
+                </article>
+              </section>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy;2025 Blog Novo. Todos os direitos reservados.</p>
+    </div>
+</body>
+</html>
