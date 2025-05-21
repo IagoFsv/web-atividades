@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marco Aurélio - Imperador Filósofo</title>
+    <style>
+      /* Variáveis CSS para temas */
+      :root {
+        --primary-color: #2c3e50;
+        --navbar-bg: #34495e;
+        --text-color: #2c3e50;
+        --background-color: #ecf0f1;
+        --sidebar-bg: #bdc3c7;
+        --footer-bg: #95a5a6;
+      }
+
+      .dark-mode {
+        --primary-color: #1a252f;
+        --navbar-bg: #2c3e50;
+        --text-color: #ecf0f1;
+        --background-color: #2c3e50;
+        --sidebar-bg: #34495e;
+        --footer-bg: #1a252f;
+      }
+
+      * {
+        box-sizing: border-box;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      body {
+        font-family: "Times New Roman", serif;
+        margin: 0;
+        color: var(--text-color);
+        background-color: var(--background-color);
+      }
+
+      /* Cabeçalho */
+      header {
+        padding: 60px;
+        text-align: center;
+        background: var(--primary-color);
+        color: white;
+      }
+
+      /* Barra de navegação sticky */
+      nav {
+        display: flex;
+        background-color: var(--navbar-bg);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav a,
+      #darkModeToggle {
+        color: white;
+        padding: 14px 20px;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        background: none;
+        border: none;
+      }
+
+      nav a:hover,
+      #darkModeToggle:hover {
+        background-color: #7f8c8d;
+        color: white;
+      }
+
+      /* Layout principal */
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      /* Barra lateral */
+      aside {
+        flex: 30%;
+        background-color: var(--sidebar-bg);
+        padding: 20px;
+      }
+
+      /* Conteúdo principal */
+      main {
+        flex: 70%;
+        padding: 20px;
+      }
+
+      /* Rodapé */
+      footer {
+        padding: 20px;
+        text-align: center;
+        background: var(--footer-bg);
+        color: white;
+      }
+
+      /* Responsividade */
+      @media screen and (max-width: 700px) {
+        .container,
+        nav {
+          flex-direction: column;
+        }
+      }
+
+      .img-container {
+        min-height: 200px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #eee;
+        margin: 10px 0;
+        position: relative;
+        border-radius: 8px;
+      }
+
+      .content-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.3s ease;
+      }
+
+      .small-img {
+        min-height: 60px;
+      }
+
+      .img-container:hover .content-img {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header>
+      <h1>Marco Aurélio</h1>
+      <p>Imperador Romano e Filósofo Estóico</p>
+    </header>
+
+    <!-- Navegação -->
+    <nav>
+      <a href="#bio">Biografia</a>
+      <a href="#obras">Obras</a>
+      <a href="#legado">Legado</a>
+      <button id="darkModeToggle">Modo Escuro</button>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <div class="container">
+      <!-- Barra lateral -->
+      <aside>
+        <section>
+          <h2>Dados Históricos</h2>
+                <div class="img-container">
+                    <img src="https://www.meisterdrucke.pt/kunstwerke/1260px/Roman_-_Portrait_bust_of_Emperor_Marcus_Aurelius_c170-180_AD_%28marble%29_%28see_also_2819510-_-_%28MeisterDrucke-911437%29.jpg" 
+                         alt="Estátua de Marco Aurélio" class="content-img">
+                </div>
+            <strong>Reinado:</strong> 161-180 d.C.<br />
+            <strong>Nascimento:</strong> 26 de abril de 121<br />
+            <strong>Morte:</strong> 17 de março de 180
+          </p>
+        </section>
+
+        <section>
+          <h3>Principais Ideias</h3>
+                          <div class="img-container small-img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Marcus_Aurelius._De_seipso%2C_seu_vita_sua_%28Xylander%2C_1558%29.pdf/page1-250px-Marcus_Aurelius._De_seipso%2C_seu_vita_sua_%28Xylander%2C_1558%29.pdf.jpg" 
+                         alt="Autodomínio" class="content-img">
+                </div>
+                <div class="img-container small-img">
+                    <img src="https://www.estoico.com.br/wp-content/uploads/2019/11/Livro-meditacoes-V-2000x1200.jpg" 
+                         alt="Virtude como Bem Supremo" class="content-img">
+                </div>
+                <div class="img-container small-img">
+                    <img src="https://cdn.pensador.com/img/frase/ma/rc/marco_aurelio_aceite_os_infortunios_que_cruzam_o_seu_ca_trf_nlvne5lg.jpg" 
+                         alt="Aceitação do Destino" class="content-img">
+                </div>
+            </section>
+        </aside>
+
+      <!-- Conteúdo principal -->
+      <main>
+        <article id="bio">
+          <h2>Biografia</h2>
+          <h5>Imperador Romano da Dinastia Antonina</h5>
+                <div class="img-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Roman_Empire_Trajan_117AD.png/1920px-Roman_Empire_Trajan_117AD.png" 
+                         alt="Mapa do Império Romano" class="content-img">
+                </div>
+          <p>
+            Marco Aurélio governou o Império Romano em seu apogeu territorial,
+            enfrentando guerras fronteiriças e uma pandemia.
+          </p>
+          <p>
+            Último dos "Cinco Bons Imperadores", combinou liderança política com
+            prática filosófica.
+          </p>
+        </article>
+
+        <article id="obras">
+          <h2>Meditações</h2>
+          <h5>Obra Filosófica Fundamental</h5>
+                <div class="img-container">
+                    <img src="https://is1-ssl.mzstatic.com/image/thumb/Publication123/v4/77/1d/86/771d86be-add7-8940-3aaa-7b27eb9799ad/1030313512.jpg/1200x600wz.png" 
+                         alt="Página das Meditações" class="content-img">
+                </div>
+          <p>
+            "Meditações", obra do imperador romano Marco Aurélio, constitui um dos mais importantes e acessíveis trabalhos da filosofia estóica. Escritas originalmente em grego koiné durante suas longas campanhas militares, especialmente entre 170 e 180 d.C., os 12 livros que compõem a obra não foram destinados à publicação formal. Serviam, primordialmente, como um diário pessoal de reflexões e exercícios para o autoaperfeiçoamento, uma forma de Marco Aurélio lembrar a si mesmo dos princípios estóicos e aplicá-los aos desafios diários do poder e da condição humana.
+          </p>
+          <h4>Principais Temas Abordados:</h4>
+          <ul>
+            <li>A transitoriedade da vida e a impermanência de todas as coisas.</li>
+            <li>O controle sobre as próprias percepções, julgamentos e emoções.</li>
+            <li>A importância da ação virtuosa, agindo com justiça, razão e para o bem comum.</li>
+            <li>A aceitação serena da morte como um processo natural e inevitável.</li>
+            <li>A unidade fundamental do cosmos (<em>kosmos</em>) e a interconexão de todos os seres.</li>
+            <li>O dever e a responsabilidade para com a comunidade e a humanidade.</li>
+          </ul>
+          <p>
+            Uma citação emblemática que reflete essa introspecção é: <em>"Não te perturbes com o pensamento de toda a tua vida. Não consideres as muitas aflições que talvez ainda tenhas de suportar, mas pergunta-te a cada momento: 'Há algo de intolerável e insuportável neste instante?'"</em> (Livro VIII, 36). Esta passagem encoraja o foco no presente como meio de lidar com a ansiedade sobre o futuro.
+          </p>
+        </article>
+
+        <article id="legado">
+          <h2>Legado e Influência</h2>
+          <p>
+            A filosofia de Marco Aurélio, encapsulada em "Meditações", transcendeu seu tempo e contexto imperial, influenciando inúmeros pensadores, líderes e indivíduos ao longo dos séculos:
+          </p>
+          <ul>
+            <li><strong>Filósofos Iluministas:</strong> Figuras como Montesquieu e Diderot encontraram em seus escritos ecos da razão e da ética natural.</li>
+            <li><strong>Psicologia Moderna:</strong> Especialmente os fundadores e praticantes da terapia cognitivo-comportamental (TCC), que utilizam princípios semelhantes para ajudar os pacientes a reestruturar pensamentos disfuncionais e gerenciar emoções.</li>
+            <li><strong>Líderes Políticos e Empresariais:</strong> Nomes como Bill Clinton e Wen Jiabao, entre outros, citaram Marco Aurélio como uma influência em sua abordagem à liderança e à tomada de decisões.</li>
+            <li><strong>Escritores e Artistas:</strong> Autores como Machado de Assis e J.D. Salinger exploraram temas de introspecção e resiliência que dialogam com o pensamento aureliano.</li>
+          </ul>
+          <p>
+            Embora seu reinado tenha coincidido com o fim da Pax Romana e o início de um período de crescente instabilidade para o Império Romano, incluindo guerras e pestes, seu legado filosófico permanece como um farol. "Meditações" continua a ser um guia atemporal para a conduta ética, o desenvolvimento da resiliência psicológica e a busca por uma vida com propósito e serenidade interior, mesmo diante das adversidades.
+          </p>
+        </article>
+      </main>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+      <h2>
+        © 2025 Legado de Marco Aurélio - "A felicidade de sua vida depende da
+        qualidade de seus pensamentos" - Todos os direitos reservados
+      </h2>
+    </footer>
+
+    <script>
+      // Controle do modo escuro
+      const darkModeToggle = document.getElementById("darkModeToggle");
+      darkModeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        darkModeToggle.textContent = document.body.classList.contains(
+          "dark-mode"
+        )
+          ? "Modo Claro"
+          : "Modo Escuro";
+      });
+    </script>
+  </body>
+</html>
