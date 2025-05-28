@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q1</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #f0f0f0;
+      }
+
+      header {
+        background-color: rgba(26, 26, 26, 0.829);
+        color: white;
+        padding: 50px;
+        text-align: center;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      .main-container {
+        display: flex;
+        flex: 1;
+      }
+
+      aside {
+        width: 30%;
+        background-color: #d5dfdd;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      aside ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      aside ul li a {
+        text-decoration: none;
+        color: #264653;
+        display: block;
+        padding: 8px 0;
+      }
+
+      aside ul li a:hover {
+        color: #e76f51;
+      }
+
+      main {
+        width: 70%;
+        background-color: #b5c2c1;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      main h2 {
+        color: #2a9d8f;
+      }
+
+      .image-placeholder {
+        width: 100%;
+        height: 200px;
+        background-color: #264653;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+
+      footer {
+        background-color: #2a9d8f;
+        color: white;
+        text-align: center;
+        padding: 10px;
+      }
+
+      @media (max-width: 400px) {
+        .main-container {
+          flex-direction: column;
+        }
+
+        aside {
+          width: 100%;
+          order: -1;
+        }
+
+        main {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Desenvolvimento de Software WEB</h1>
+    </header>
+
+    <div class="main-container">
+      <aside>
+        <nav>
+          <h2>[Menu Lateral]</h2>
+          <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main>
+        <article>
+          <h2>[Conteúdo]</h2>
+          <section>
+            <h3>Introdução ao HTML</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
+              ipsam tempore? Reprehenderit laudantium nemo ab cumque, corporis
+              atque sint quo dolores possimus quas provident quasi accusantium
+              facere incidunt consequatur quaerat.
+            </p>
+            <div class="image-placeholder">[imagem.png]</div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Doloremque iure autem voluptas cupiditate, deleniti doloribus
+              exercitationem adipisci provident blanditiis, quod quos
+              architecto. Reiciendis, expedita voluptates perferendis
+              consectetur totam veniam cumque.
+            </p>
+          </section>
+          <section>
+            <h3>Mais Ipsum Lorem</h3>
+            <p>
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit.
+            </p>
+            <div class="image-placeholder">[Imagem.jpg]</div>
+          </section>
+        </article>
+      </main>
+    </div>
+
+    <footer>
+      <p>fulanodetal@ufc.br<br>2025.1<br> Todos os direitos reservados</p>
+    </footer>
+  </body>
+</html>
