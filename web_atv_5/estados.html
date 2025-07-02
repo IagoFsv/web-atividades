@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Brasil - Estados</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>COVID-19 no Brasil - Estados</h1>
+    <table id="tabela-estados">
+        <thead>
+            <tr>
+                <th>Nome do Estado</th>
+                <th>Abreviação</th>
+                <th>Número de Casos</th>
+                <th>Número de Suspeitos</th>
+                <th>Número de Falecimentos</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot></tfoot>
+    </table>
+    <p id="maior-relacao"></p>
+    <p id="menor-relacao"></p>
+
+    <script>
+        async function loadEstados() {
+            try {
+                const res = await fetch('https://covid19-brazil-api.vercel.app/api/report/v1');
+                if (!res.ok) throw new Error('Erro ao buscar dados');
+                const json = await res.json();
+                const data = json.data;
+                const tbody = document.querySelector('#tabela-estados tbody');
+                let totalCasos = 0, totalSuspeitos = 0, totalObitos = 0;
+
+                data.forEach(item => {
+                    totalCasos += item.cases;
+                    totalSuspeitos += item.suspects;
+                    totalObitos += item.deaths;
+
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${item.state}</td>
+                        <td>${item.uf}</td>
+                        <td>${item.cases}</td>
+                        <td>${item.suspects}</td>
+                        <td>${item.deaths}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+
+                const count = data.length;
+                const mediaCasos = totalCasos / count;
+                const mediaSuspeitos = totalSuspeitos / count;
+                const mediaObitos = totalObitos / count;
+
+                [...tbody.rows].forEach(row => {
+                    const obitos = parseInt(row.cells[4].textContent, 10);
+                    if (obitos > mediaObitos) row.classList.add('highlight');
+                });
+
+                const tfoot = document.querySelector('#tabela-estados tfoot');
+                const trFoot = document.createElement('tr');
+                trFoot.innerHTML = `
+                    <td colspan="2">Média</td>
+                    <td>${mediaCasos.toFixed(2)}</td>
+                    <td>${mediaSuspeitos.toFixed(2)}</td>
+                    <td>${mediaObitos.toFixed(2)}</td>
+                `;
+                tfoot.appendChild(trFoot);
+
+                let maiorRatio = -Infinity, menorRatio = Infinity;
+                let estadoMaior = '', estadoMenor = '';
+                data.forEach(item => {
+                    if (item.deaths > 0) {
+                        const ratio = item.cases / item.deaths;
+                        if (ratio > maiorRatio) { maiorRatio = ratio; estadoMaior = item.state; }
+                        if (ratio < menorRatio) { menorRatio = ratio; estadoMenor = item.state; }
+                    }
+                });
+                document.getElementById('maior-relacao').textContent = `Maior relação Casos/Falecimentos: ${estadoMaior} (${maiorRatio.toFixed(2)})`;
+                document.getElementById('menor-relacao').textContent = `Menor relação Casos/Falecimentos: ${estadoMenor} (${menorRatio.toFixed(2)})`;
+            } catch (error) {
+                document.body.innerHTML += '<p style="color:red;">Erro ao carregar dados dos estados. Tente novamente mais tarde.</p>';
+                console.error(error);
+            }
+        }
+        loadEstados();
+    </script>

@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 50px;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+.highlight {
+  background-color: #ffdddd;
+}
+tfoot {
+  font-weight: bold;
+}
+
+#tabela-paises .highlight {
+  background-color: #f9ffdd;
+}
+
+p.error {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#maior-relacao,
+#menor-relacao {
+  text-align: center;
+  font-weight: bold;
+  margin: 10px 0;
+  background-color: rgb(255, 224, 224);
+}
